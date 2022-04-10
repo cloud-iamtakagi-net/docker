@@ -7,7 +7,7 @@ services:
       - .env
     volumes:
       - ./postgres:/docker-entrypoint-initdb.d
-      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres:/var/lib/postgresql/data
     networks:
       - internal_network
     command: -p ${POSTGRES_PORT}
