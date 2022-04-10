@@ -3,16 +3,14 @@ services:
   postgres:
     container_name: twichat_postgres
     image: postgres
-    environment:
-      POSTGRES_USER: twichat
-      POSTGRES_PASSWORD: twichat
-      POSTGRES_DB: twichat
+    env_file:
+      - .env
     volumes:
       - ./postgres:/docker-entrypoint-initdb.d
       - ./postgres/data:/var/lib/postgresql/data
     networks:
       - internal_network
-    command: -p 5433
+    command: -p ${POSTGRES_PORT}
 
   web:
     container_name: twichat_web
@@ -30,18 +28,8 @@ services:
     image: ghcr.io/iamtakagi/twichat_backend:latest
     volumes:
       - ./backend/log/gunicorn:/app/log/gunicorn
-    environment:
-      - POSTGRES_DB=twichat
-      - POSTGRES_USER=twichat
-      - POSTGRES_PASSWORD=twichat
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5433
-      - SECRET_KEY=secret
-      - DEBUG=false
-      - TWITTER_API_CONKEY=xxx
-      - TWITTER_API_CONSEC=xxx
-      - BACKEND_HOSTNAME=twichat.app
-      - WEBPAGE_BASE_URL=https://twichat.app
+    env_file:
+      - .env
     command: >
       /bin/bash -c " python manage.py migrate && gunicorn -c /app/gunicorn.py twichat.wsgi"
     networks:

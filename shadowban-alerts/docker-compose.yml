@@ -7,7 +7,5 @@ services:
     volumes:
       - './crontab:/app/crontab'
       - './ShadowbanAlerts.json:/app/ShadowbanAlerts.json'
-    environment:
-      - TZ=Asia/Tokyo
-      - SCREEN_NAMES=@iam_takagi,@919takagi,@iamtakagi_ai,@nyanpassnanon
-      - WEBHOOK_URL=https://discord.com/api/webhooks/xxx/xxx
+    env_file:
+      - .env

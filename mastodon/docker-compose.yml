@@ -10,10 +10,8 @@ services:
       test: ["CMD", "pg_isready", "-U", "mastodon"]
     volumes:
       - ./postgres:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: mastodon
-      POSTGRES_DB: mastodon
-      POSTGRES_PASSWORD: mastodon
+    env_file: 
+      - .env.production
 
   redis:
     restart: always
@@ -26,6 +24,7 @@ services:
       - ./redis:/data
 
   web:
+    container_name: mstdn_web
     image: tootsuite/mastodon
     restart: always
     env_file: .env.production
@@ -42,15 +41,13 @@ services:
       - redis
     volumes:
       - ./public/system:/mastodon/public/system
-    environment:
-      POSTGRES_USER: mastodon
-      POSTGRES_DB: mastodon
-      POSTGRES_PASSWORD: mastodon
 
   streaming:
+    container_name: mstdn_streaming
     image: tootsuite/mastodon
     restart: always
-    env_file: .env.production
+    env_file: 
+      - .env.production
     command: node ./streaming
     networks:
       - external_network
@@ -79,5 +76,6 @@ services:
     
 networks:
   external_network:
+    external: true
   internal_network:
     internal: true

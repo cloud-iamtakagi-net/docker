@@ -1,0 +1,15 @@
+version: "3"
+services:
+
+  web:
+    container_name: renchon_chat
+    image: ghcr.io/iamtakagi/renchon_chat:latest
+    environment:
+      TZ: Asia/Tokyo
+      PORT: 3700
+    networks:
+      - external_network
+
+networks:
+  external_network:
+    external: true

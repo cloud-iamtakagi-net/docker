@@ -8,11 +8,8 @@ services:
     restart: always
     networks:
       - internal_network
-    environment:
-      MYSQL_ROOT_PASSWORD: wordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+    env_file:
+      - .env
 
   wordpress:
     depends_on:
@@ -27,10 +24,8 @@ services:
     networks:
       - internal_network
       - external_network
-    environment:
-      WORDPRESS_DB_HOST: mysql:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
+    env_file:
+      - .env
 
 networks:
     internal_network:
