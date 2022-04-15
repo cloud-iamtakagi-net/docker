@@ -4,6 +4,8 @@ services:
   app:
     container_name: renchon
     image: ghcr.io/iamtakagi/renchon:latest
+    volumes:
+      - ./data:/app/data
     env_file:
       - .env
     restart: unless-stopped
