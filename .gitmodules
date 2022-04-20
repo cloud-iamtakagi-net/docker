@@ -1,3 +1,6 @@
 [submodule "nginx"]
 	path = nginx
 	url = https://github.com/cloud-iamtakagi-net/nginx.git
+[submodule "samba"]
+	path = samba
+	url = https://github.com/cloud-iamtakagi-net/samba.git
