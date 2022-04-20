@@ -4,3 +4,6 @@
 [submodule "samba"]
 	path = samba
 	url = https://github.com/cloud-iamtakagi-net/samba.git
+[submodule "portainer"]
+	path = portainer
+	url = https://github.com/kanagawa-iamtakagi-net/portainer.git
