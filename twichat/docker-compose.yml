@@ -19,7 +19,7 @@ services:
       TZ: Asia/Tokyo
       PORT: 3500
     networks:
-      - external_network
+      - proxy_network
     depends_on:
       - backend
 
@@ -34,12 +34,12 @@ services:
       /bin/bash -c " python manage.py migrate && gunicorn -c /app/gunicorn.py twichat.wsgi"
     networks:
       - internal_network
-      - external_network
+      - proxy_network
     depends_on:
       - postgres
 
 networks:
-  external_network:
+  proxy_network:
     external: true
   internal_network:
     internal: true

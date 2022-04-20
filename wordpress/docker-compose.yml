@@ -23,12 +23,12 @@ services:
     restart: always
     networks:
       - internal_network
-      - external_network
+      - proxy_network
     env_file:
       - .env
 
 networks:
     internal_network:
       internal: true
-    external_network:
+    proxy_network:
       external: true

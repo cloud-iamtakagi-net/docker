@@ -30,7 +30,7 @@ services:
     env_file: .env.production
     command: bash -c "rm -f /mastodon/tmp/pids/server.pid; bundle exec rails s -p 3000"
     networks:
-      - external_network
+      - proxy_network
       - internal_network
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost:3000/health || exit 1"]
@@ -50,7 +50,7 @@ services:
       - .env.production
     command: node ./streaming
     networks:
-      - external_network
+      - proxy_network
       - internal_network
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost:4000/api/v1/streaming/health || exit 1"]
@@ -69,13 +69,13 @@ services:
       - postgres
       - redis
     networks:
-      - external_network
+      - proxy_network
       - internal_network
     volumes:
       - ./public/system:/mastodon/public/system
     
 networks:
-  external_network:
+  proxy_network:
     external: true
   internal_network:
     internal: true

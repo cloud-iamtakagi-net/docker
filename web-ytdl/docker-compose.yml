@@ -9,8 +9,8 @@ services:
       - PORT=4200
     restart: unless-stopped
     networks:
-      - external_network
+      - proxy_network
 
 networks:
-  external_network:
+  proxy_network:
     external: true

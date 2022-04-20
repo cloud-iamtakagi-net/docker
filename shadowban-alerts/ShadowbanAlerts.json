@@ -1,3 +1,21 @@
 {
-    "LastUpdatedAt": ""
+    "LastUpdatedAt": "2022/04/20 22:29:04",
+    "iam_takagi": {
+        "SearchSuggestionBan": false,
+        "SearchBan": false,
+        "GhostBan": false,
+        "ReplyDeboosting": false
+    },
+    "iamtakagi_ai": {
+        "SearchSuggestionBan": false,
+        "SearchBan": false,
+        "GhostBan": false,
+        "ReplyDeboosting": false
+    },
+    "nyanpassnanon": {
+        "SearchSuggestionBan": false,
+        "SearchBan": false,
+        "GhostBan": false,
+        "ReplyDeboosting": false
+    }
 }

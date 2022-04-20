@@ -9,9 +9,9 @@ services:
     env_file:
       - .env
     networks:
-      - external_network
+      - proxy_network
     restart: unless-stopped
 
 networks:
-  external_network:
+  proxy_network:
     external: true

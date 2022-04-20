@@ -8,8 +8,8 @@ services:
       TZ: Asia/Tokyo
       PORT: 3700
     networks:
-      - external_network
+      - proxy_network
 
 networks:
-  external_network:
+  proxy_network:
     external: true

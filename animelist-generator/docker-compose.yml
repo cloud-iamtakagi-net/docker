@@ -10,7 +10,7 @@ services:
       PORT: 3100
     restart: unless-stopped
     networks:
-      - external_network
+      - proxy_network
       - internal_network
   frontend:
     container_name: ag_frontend
@@ -23,11 +23,11 @@ services:
     depends_on:
       - backend
     networks:
-      - external_network
+      - proxy_network
       - internal_network
 
 networks:
-  external_network:
+  proxy_network:
     external: true
   internal_network:
     internal: true
