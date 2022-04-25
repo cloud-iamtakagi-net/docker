@@ -13,7 +13,7 @@ radio.discord/.env
 renchon/.env
 shadowban-alerts/.env
 takagi.AI/.env
-takagi.AI.discord/.env
+takagi-ai-discord/.env
 twichat/.env
 twichat/backend/log/gunicorn/access.log
 twichat/backend/log/gunicorn/error.log
