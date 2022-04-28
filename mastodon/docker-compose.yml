@@ -41,6 +41,8 @@ services:
       - postgres
       - redis
     volumes:
+      - ./public/assets:/mastodon/public/assets
+      - ./public/packs:/mastodon/public/packs
       - ./public/system:/mastodon/public/system
 
   streaming:
