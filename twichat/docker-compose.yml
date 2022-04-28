@@ -10,7 +10,6 @@ services:
       - ./postgres:/var/lib/postgresql/data
     networks:
       - internal_network
-    command: -p ${POSTGRES_PORT}
 
   web:
     container_name: twichat_web
