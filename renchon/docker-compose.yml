@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  app:
-    container_name: renchon
-    image: ghcr.io/iamtakagi/renchon:latest
+  bot:
+    container_name: renchon_bot
+    image: ghcr.io/renchon-chat/bot:latest
     volumes:
       - ./data:/app/data
     env_file:
@@ -11,6 +11,16 @@ services:
     restart: unless-stopped
     networks:
       - proxy_network
+  
+  web:
+    container_name: renchon_web
+    image: ghcr.io/renchon-chat/web:latest
+    environment:
+      TZ: Asia/Tokyo
+      PORT: 3700
+    networks:
+      - proxy_network
+    restart: unless-stopped
 
 networks:
   proxy_network:
