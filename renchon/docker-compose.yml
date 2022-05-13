@@ -3,7 +3,7 @@ version: '3'
 services:
   bot:
     container_name: renchon_bot
-    image: ghcr.io/renchon-chat/bot:latest
+    image: ghcr.io/renchon-iamtakagi-net/bot:latest
     volumes:
       - ./data:/app/data
     env_file:
@@ -14,7 +14,7 @@ services:
   
   web:
     container_name: renchon_web
-    image: ghcr.io/renchon-chat/web:latest
+    image: ghcr.io/renchon-iamtakagi-net/web:latest
     environment:
       TZ: Asia/Tokyo
       PORT: 3700
