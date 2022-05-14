@@ -23,3 +23,5 @@ takagi.AI/data/tweets.txt
 
 !.gitkeep
 renchon/data/timeline_tweets.json
+renchon/web.env
+renchon/bot.env

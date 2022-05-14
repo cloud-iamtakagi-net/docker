@@ -7,7 +7,7 @@ services:
     volumes:
       - ./data:/app/data
     env_file:
-      - .env
+      - bot.env
     restart: unless-stopped
     networks:
       - proxy_network
@@ -15,9 +15,8 @@ services:
   web:
     container_name: renchon_web
     image: ghcr.io/renchon-iamtakagi-net/web:latest
-    environment:
-      TZ: Asia/Tokyo
-      PORT: 3700
+    env_file:
+      - web.env
     networks:
       - proxy_network
     restart: unless-stopped
