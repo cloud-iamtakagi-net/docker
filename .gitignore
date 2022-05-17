@@ -25,3 +25,4 @@ takagi.AI/data/tweets.txt
 renchon/data/timeline_tweets.json
 renchon/web.env
 renchon/bot.env
+renchon/followback.env

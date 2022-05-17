@@ -8,9 +8,9 @@ services:
       - ./data:/app/data
     env_file:
       - bot.env
-    restart: unless-stopped
     networks:
       - proxy_network
+    restart: always
   
   web:
     container_name: renchon_web
@@ -19,7 +19,14 @@ services:
       - web.env
     networks:
       - proxy_network
-    restart: unless-stopped
+    restart: always
+
+  followback:
+    container_name: renchon_followback
+    image: ghcr.io/renchon-iamtakagi-net/followback:latest
+    env_file:
+      - followback.env
+    restart: always
 
 networks:
   proxy_network:
