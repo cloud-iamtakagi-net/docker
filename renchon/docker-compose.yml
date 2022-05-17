@@ -21,12 +21,12 @@ services:
       - proxy_network
     restart: always
 
-  followback:
-    container_name: renchon_followback
-    image: ghcr.io/renchon-iamtakagi-net/followback:latest
-    env_file:
-      - followback.env
-    restart: always
+  #followback:
+    #container_name: renchon_followback
+    #image: ghcr.io/renchon-iamtakagi-net/followback:latest
+    #env_file:
+      #- followback.env
+    #restart: always
 
 networks:
   proxy_network:
