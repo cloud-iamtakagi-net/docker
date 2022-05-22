@@ -28,6 +28,15 @@ services:
       #- followback.env
     #restart: always
 
+  ff-report:
+    container_name: renchon_ff-report
+    image: ghcr.io/renchon-iamtakagi-net/ff-report:latest
+    volumes:
+      - ./ff-report/crontab:/crontab
+      - ./ff-report/data.json:/data.json
+    env_file:
+      - ff-report.env
+
 networks:
   proxy_network:
     external: true

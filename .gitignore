@@ -26,3 +26,4 @@ renchon/data/timeline_tweets.json
 renchon/web.env
 renchon/bot.env
 renchon/followback.env
+renchon/ff-report.env
