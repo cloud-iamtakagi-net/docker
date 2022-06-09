@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  app:
+    container_name: nhrigs
+    image: ghcr.io/iamtakagi/nhrigs:latest
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=Asia/Tokyo
+      - PORT=2269
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true
