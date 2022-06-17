@@ -7,6 +7,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
     environment:
       - TZ=Asia/Tokyo
+      - LANG=ja_JP.UTF-8
       - PORT=2269
     env_file:
       - .env
