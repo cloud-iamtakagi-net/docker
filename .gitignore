@@ -1,5 +1,6 @@
 !.gitkeep
 .DS_Store
+.env
 
 mastodon/postgres/**/*
 mastodon/public/system/**/*
@@ -39,4 +40,3 @@ images/static/*.png
 images/static/*.webp
 images/static/*.bmp
 images/static/*.svg
-images/.env
