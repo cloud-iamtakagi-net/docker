@@ -1,3 +1,6 @@
+!.gitkeep
+.DS_Store
+
 mastodon/postgres/**/*
 mastodon/public/system/**/*
 docker/mastodon/redis/**/*
@@ -21,10 +24,19 @@ wordpress/.env
 takagi.AI/data/model.json
 takagi.AI/data/tweets.txt
 
-!.gitkeep
 renchon/data/timeline_tweets.json
 renchon/web.env
 renchon/bot.env
 renchon/followback.env
 renchon/ff-report.env
 nhrigs/.env
+
+images/static/*.gif
+images/static/*.jpeg
+images/static/*.jpg
+images/static/*.tiff
+images/static/*.png
+images/static/*.webp
+images/static/*.bmp
+images/static/*.svg
+images/.env
