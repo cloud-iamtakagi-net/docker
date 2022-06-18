@@ -32,11 +32,11 @@ renchon/followback.env
 renchon/ff-report.env
 nhrigs/.env
 
-images/static/*.gif
-images/static/*.jpeg
-images/static/*.jpg
-images/static/*.tiff
-images/static/*.png
-images/static/*.webp
-images/static/*.bmp
-images/static/*.svg
+images/storage/*.gif
+images/storage/*.jpeg
+images/storage/*.jpg
+images/storage/*.tiff
+images/storage/*.png
+images/storage/*.webp
+images/storage/*.bmp
+images/storage/*.svg

@@ -5,7 +5,7 @@ services:
     container_name: images
     image: ghcr.io/iamtakagi/images:latest
     volumes:
-      - ./static:/app/static
+      - ./storage:/app/storage
     env_file:
       - .env
     environment:
